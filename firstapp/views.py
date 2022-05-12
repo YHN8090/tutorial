@@ -9,7 +9,7 @@ def show(request):
      #   result += c.name + '<br>'
     #return HttpResponse(result)
     return render(request, 'show.html',
-     {'data':Curriculum})
+     {'data':curriculum})
 
 
 def insert(request):   

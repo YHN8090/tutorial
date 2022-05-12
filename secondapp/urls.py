@@ -6,10 +6,10 @@ from . import views
 urlpatterns = [
     # path('main/', views.main),
      path('insert/', views.insert),
-     path('show/', views.show)
-    # path('insert/', views.insert),
-    # path('show/', views.show)
+     path('show/', views.show),
+     path('army_shop/', views.army_shop)
 ]
+
 def show(request):
     course = course.objects.all()
     result = ''

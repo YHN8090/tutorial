@@ -26,5 +26,6 @@ urlpatterns = [
     # path('index2/', views.index2),
     path('first/', include('firstapp.urls')),
     path('Home/', config_views.Home),
-    path('second/',include('secondapp.urls'))
+    path('second/',include('secondapp.urls')),
+    path('third/', include('thirdapp.urls'))
 ]
