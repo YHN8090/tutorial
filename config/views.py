@@ -14,4 +14,7 @@ def main(request):
     return HttpResponse('<u>Main</u>')
 
 def Home(request):
-    return HttpResponse('<u>Home</u>')
+    return HttpResponse('Home')
+
+def index(request):
+    return render(request, 'index.html',{})

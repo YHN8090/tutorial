@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from django.shortcuts import render
-from .models import Shop, JejuOlle, Owner
+from .models import Shop, JejuOlle, Owner , Hospital
 
 def owner(request):
   if request.method == 'POST':
@@ -40,3 +40,9 @@ def jeju_olle(request):
         'thirdapp/jeju_olle.html',
         {'jeju_olle_list': jeju_olle_list}
 )
+
+def hospital(requset):
+  hospitals = Hospital.objects.all()
+  return render(
+    requset, 'thirdapp/hospital.html',{'hospitals':hospitals}
+  )
