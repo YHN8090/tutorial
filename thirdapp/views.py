@@ -1,7 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from django.shortcuts import render
+
+from thirdapp.forms import OwnerForm
 from .models import Shop, JejuOlle, Owner , Hospital
 
 def owner(request):
@@ -46,3 +48,18 @@ def hospital(requset):
   return render(
     requset, 'thirdapp/hospital.html',{'hospitals':hospitals}
   )
+
+def form_model(request):
+  if request.method == 'POST':
+    form = OwnerForm(request.POST)
+    if form.is_valid():
+      owner = form.save(commit=False)
+# (필요하다면) 데이터 추가 / 변경
+      owner.save()
+      return redirect('/third/form/model/')
+  else:
+      form = OwnerForm()
+  return render(
+      request, 'thirdapp/form_model.html',
+    {'form': form}
+)

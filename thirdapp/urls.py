@@ -11,4 +11,5 @@ urlpatterns = [
   
     path('owner/', views.owner),
     path('hospital/', views.hospital),
+    path('form/model/', views.form_model),
 ]
